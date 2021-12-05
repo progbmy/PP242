@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+    <body>
+    <div >
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Age</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each = "user : ${users}">
+                <td th:text="${user.getId()}">VALUE</td>
+                <td th:text="${user.getFirstName()}">VALUE</td>
+                <td th:text="${user.getLastName()}">VALUE</td>
+                <td th:text="${user.getAge()}">VALUE</td></tr>
+            </tbody>
+
+        </table>
+    </div>
+</body>
+</html>
