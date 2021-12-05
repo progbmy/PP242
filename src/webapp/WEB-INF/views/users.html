@@ -5,28 +5,22 @@
     <title>Cars</title>
 </head>
     <body>
-    <div >
-        <table>
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>FirstName</th>
-                <th>LastName</th>
-                <th>Age</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each = "user : ${users}">
-                <a th:href="@{/users/{id}(id= ${user.getId()})}" th:text="${user.getFirstName()}"></a>
 
 
-                <td th:text="${user.getId()}">VALUE</td>
-                <td th:text="${user.getFirstName()}">VALUE</td>
-                <td th:text="${user.getLastName()}">VALUE</td>
-                <td th:text="${user.getAge()}">VALUE</td></tr>
-            </tbody>
 
-        </table>
+    <div th:each = "user : ${users}">
+        <a th:href="@{/users/{id}(id= ${user.getId()})}" th:text="${user.getFirstName()}">user</a>
     </div>
+        <br/>
+        <hr/>
+
+        <a href="/users/new">Create new user</a>
+
+<!--                <td th:text="${user.getId()}">VALUE</td>-->
+<!--                <td th:text="${user.getFirstName()}">VALUE</td>-->
+<!--                <td th:text="${user.getLastName()}">VALUE</td>-->
+<!--                <td th:text="${user.getAge()}">VALUE</td></tr>-->
+
+
 </body>
 </html>

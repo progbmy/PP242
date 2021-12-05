@@ -7,7 +7,7 @@ import java.util.List;
 
 @Component
 public class UserDAOImpl implements UserDAO {
-
+    private static int PEOPLE_COUNT;
     @Override
     public List<User> resUsers() {
 
@@ -26,8 +26,20 @@ public class UserDAOImpl implements UserDAO {
     }
     // Метод поиска по id
     public User show(int id) {
-        return resUsers().stream().filter(user -> user.getId() ==id).findAny().orElse(null);
+        return resUsers().stream().filter(user -> user.getId() == id).findAny().orElse(null);
     }
 
+    public void save(User user) {
+        user.setId(6); // ++PEOPLE_COUNT
+        resUsers().add(user);
+    }
 
+    public void update(int id, User updatedUser) {
+        User userToBeUpdated = show(id);
+        userToBeUpdated.setFirstName(updatedUser.getFirstName());
+    }
+
+    public void delete(int id) {
+        resUsers().removeIf(p->p.getId()== id);
+    }
 }
