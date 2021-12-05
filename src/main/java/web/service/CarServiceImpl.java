@@ -8,7 +8,6 @@ import java.util.stream.Collectors;
 
 @Component
 public class CarServiceImpl implements CarService {
-
     private final CarDAO carDAO;
 
     public CarServiceImpl(CarDAO carDAO) {
@@ -16,10 +15,7 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public List<Car> resCars(String model, int count) {
-        return carDAO.resCars().stream()
-                .filter(car -> car.getModel().contains(model))
-                .limit(count)
-                .collect(Collectors.toList());
+    public List<Car> carsCount(List<Car> cars, int count) {
+        return carDAO.resCars().stream().limit(count).collect(Collectors.toList());
     }
 }
