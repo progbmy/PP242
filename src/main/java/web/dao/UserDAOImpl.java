@@ -10,6 +10,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public List<User> resUsers() {
+
         List<User> users = new ArrayList<>();
 
         users.add(new User(1,"Mike", "Harry", 18));
@@ -19,4 +20,14 @@ public class UserDAOImpl implements UserDAO {
         users.add(new User(5,"Bob", "Marly", 22));
         return users;
     }
+
+    public List<User> index() {
+        return resUsers();
+    }
+    // Метод поиска по id
+    public User show(int id) {
+        return resUsers().stream().filter(user -> user.getId() ==id).findAny().orElse(null);
+    }
+
+
 }

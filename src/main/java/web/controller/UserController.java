@@ -3,6 +3,7 @@ package web.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import web.dao.UserDAO;
@@ -30,8 +31,20 @@ public class UserController {
         model.addAttribute("users", list);
         return "/users";
     }
+    //
+    @GetMapping("/{id}")
+    public String show(@PathVariable("id") int id, Model model) {
+        model.addAttribute("users", userDAO.show(id));
+        return "show";
+    }
 
+    @GetMapping("/new")
     public String addUser() {
+        return null;
+    }
+
+    @GetMapping("edit")
+    public String editUser() {
         return null;
     }
 
