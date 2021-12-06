@@ -5,13 +5,22 @@
     <title>Edit</title>
 </head>
 <body>
-<form th:method="PATCH" th:action="@{/users/{id}(id=${users.getId()})}" th:object="${person}">
+
+<form th:method="PATCH" th:action="@{/users/{id}(id=${users.getId()})}" th:object="${users}">
 
     <label for="firstName">Enter firstName</label>
     <input type="text" th:field="*{firstName}" id="firstName">
+    <div style="color: red" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">firstName error</div>
+    <br/>
+    <label for="lastName">Enter lastName</label>
+    <input type="text" th:field="*{lastName}" id="lastName">
+    <div style="color: red" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">lastName error</div>
+    <br/>
+    <label for="age">Enter age</label>
+    <input type="text" th:field="*{age}" id="age">
+    <div style="color: red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">age error</div>
     <br/>
     <input type="submit" value="Update!">
-
 </form>
 </body>
 </html>

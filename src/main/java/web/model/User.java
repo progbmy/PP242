@@ -1,9 +1,21 @@
 package web.model;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
 public class User {
     private int id;
+
+    @NotEmpty(message = "Name Not null")
+    @Size(min = 3, max = 30, message = "3-30 characters")
     private String firstName;
+
+    @NotEmpty(message = "lastName not null")
     private String lastName;
+
+    @NotEmpty(message = "not null!")
+    @Min(value = 0, message = "age 0+")
     private int age;
 
     public User() {}
