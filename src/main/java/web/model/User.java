@@ -1,27 +1,20 @@
 package web.model;
 
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Size;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "users")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
-    @NotEmpty(message = "Name Not null")
-    @Size(min = 3, max = 30, message = "3-30 characters")
     private String firstName;
-
-    @NotEmpty(message = "lastName not null")
     private String lastName;
-
-    @NotEmpty(message = "not null!")
-    @Min(value = 0, message = "age 0+")
     private int age;
 
     public User() {}
 
-    public User(int id, String firstName, String lastName, int age) {
-        this.id = id;
+    public User(String firstName, String lastName, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
