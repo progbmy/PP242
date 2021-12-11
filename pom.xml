@@ -12,6 +12,7 @@
 
     <properties>
         <spring.version>5.2.0.RELEASE</spring.version>
+        <!--        <spring.version>5.5.1</spring.version>-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -21,6 +22,20 @@
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
             <scope>test</scope>
+        </dependency>
+
+        <!--        Spring config-->
+        <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>5.6.0</version>
+        </dependency>
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.security/spring-security-config &ndash;&gt;-->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>5.6.0</version>
         </dependency>
 
         <dependency>
@@ -40,6 +55,10 @@
             <artifactId>spring-data-jpa</artifactId>
             <version>2.6.0</version>
         </dependency>
+
+        <!--Spring config-->
+
+
 
         <dependency>
             <groupId>org.hibernate</groupId>
