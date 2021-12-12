@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>New User</title>
@@ -19,6 +19,12 @@
         <input type="text" th:field="*{age}" id="age">
         <div style="color: red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">age error</div>
         <br/>
+
+        <label for= "email">Enter Email</label>
+        <input type="text" th:field="*{email}" id="email">
+        <div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
+        </br>
+
         <input type="submit" value="Create!">
 
     </form>

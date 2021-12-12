@@ -9,13 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class HelloController {
+public class HomeController {
 
 	@GetMapping(value = "/")
 	public String printWelcome(ModelMap model) {
 		List<String> messages = new ArrayList<>();
 		messages.add("Hello!");
-		messages.add("This app Hibernate");
+		messages.add("This app MVC Security + database");
 		messages.add("2021");
 		model.addAttribute("messages", messages);
 		return "index";
