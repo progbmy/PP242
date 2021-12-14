@@ -11,7 +11,15 @@
         <h1 th:text="${msg}"></h1>
     </th:block>
 
-    <a href="/users">List users</a>
+    <a href="/users">List users</a> <br>
+    <a href="/admin">Admin panel</a>
+
+    <form th:method="GET" th:action="@{/logout}">
+        <input type="submit" value="Logout">
+    </form>
+
+
 </div>
+
 </body>
 </html>

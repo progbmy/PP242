@@ -1,9 +1,9 @@
-drop table roles, user_roles, users;
+drop table roles, users, user_roles;
 
 
 create table users (
                        id int not null auto_increment primary key,
-                       firstName varchar(255) not null ,
+                       username varchar(255) not null ,
                        lastName varchar(255) not null ,
                        email varchar(255) not null ,
                        age int not null ,
@@ -25,12 +25,15 @@ create table user_roles(
 
 );
 
-insert into users values (1, 'tom', 'jerry','j@mail.ru',23, 'gUuFwNo4zkMV+erdGtBlf5NunNgcELQuiCFJmCU4F+E=');
-
+insert into users values (1, 'admin', 'admins','j@mail.ru',23, '$2a$10$0HcxOqSy/lyZs2dHosCdn.5p.OI1PtI9Z5AVZXBElYY8hLPzQdfhu');
+insert into users values (2, 'user', 'users', 'user@mail.ru', 20,'$2a$10$0HcxOqSy/lyZs2dHosCdn.5p.OI1PtI9Z5AVZXBElYY8hLPzQdfhu');
 
 insert into roles values (1, 'ROLE_USER');
 insert into roles values (2, 'ROLE_ADMIN');
 insert into user_roles values (1, 2);
+insert into user_roles values (2, 1);
+
+
 
 
 select * from users;

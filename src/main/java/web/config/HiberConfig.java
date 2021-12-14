@@ -58,6 +58,7 @@ public class HiberConfig {
         entityManagerFactoryBean.setJpaVendorAdapter(jpaVendorAdapter);
         entityManagerFactoryBean.setJpaProperties(properties);
 
+
         return entityManagerFactoryBean;
     }
 

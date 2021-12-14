@@ -8,9 +8,9 @@
 
 <form th:method="PATCH" th:action="@{/users/{id}(id=${users.getId()})}" th:object="${users}">
 
-    <label for="firstName">Enter firstName</label>
-    <input type="text" th:field="*{firstName}" id="firstName">
-    <div style="color: red" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">firstName error</div>
+    <label for="userName">Enter userName</label>
+    <input type="text" th:field="*{userName}" id="userName">
+    <div style="color: red" th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}">UserName error</div>
     <br/>
     <label for="lastName">Enter lastName</label>
     <input type="text" th:field="*{lastName}" id="lastName">
@@ -24,6 +24,12 @@
     <input type="text" th:field="*{email}" id="email">
     <div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
     </br>
+
+    <label for= "password">Enter password</label>
+    <input type="text" th:field="*{password}" id="password">
+    <div style="color: red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">password error</div>
+    </br>
+
     <input type="submit" value="Update!">
 </form>
 </body>

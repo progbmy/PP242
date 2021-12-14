@@ -1,17 +1,16 @@
 package web.controller;
 
+
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import web.dao.UserDAO;
 import web.model.User;
 
-
 @Controller
 @RequestMapping("/users")
 public class UserController {
+
 
     private final UserDAO userDAO;
 
@@ -31,13 +30,11 @@ public class UserController {
         return "show";
     }
 
-//    @Transactional
     @GetMapping("/new")
     public String newUser(@ModelAttribute("user") User user) {
         return "new";
     }
 
-//    @Transactional
     @PostMapping()
     public String create(@ModelAttribute("user") User user) {
         userDAO.createUser(user);

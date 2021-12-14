@@ -12,7 +12,6 @@
 
     <properties>
         <spring.version>5.2.0.RELEASE</spring.version>
-        <!--        <spring.version>5.5.1</spring.version>-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -24,14 +23,14 @@
             <scope>test</scope>
         </dependency>
 
-        <!--        Spring config-->
-        <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+        <!--  Spring config-->
+
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
             <version>5.6.0</version>
         </dependency>
-        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.security/spring-security-config &ndash;&gt;-->
+
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
@@ -56,9 +55,8 @@
             <version>2.6.0</version>
         </dependency>
 
-        <!--Spring config-->
 
-
+        <!--HIBER config-->
 
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -72,12 +70,14 @@
             <version>5.6.1.Final</version>
         </dependency>
 
+<!--        MYSQL -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.27</version>
         </dependency>
 
+<!--        SERVLET -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
