@@ -11,8 +11,15 @@
         <h1 th:text="${msg}"></h1>
     </th:block>
 
-    <a href="/users">List users</a> <br>
-    <a href="/admin">Admin panel</a>
+    <a href="/admin/users">Admin panel</a> <br>
+    <a href="/user/)">User Panel</a>
+
+    <a th:href="@{/user/{id}(id = ${user.getId()})}">User Panel</a>
+    <br>
+<!--    </div>-->
+<!--    <div th:each = "user : ${users}">-->
+<!--    <a th:href="@{/user/{id}(id= ${user.getId()})}">User panel new</a>-->
+<!--    </div>-->
 
     <form th:method="GET" th:action="@{/logout}">
         <input type="submit" value="Logout">
