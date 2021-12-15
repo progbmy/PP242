@@ -4,16 +4,28 @@ package web.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import web.dao.RoleDAO;
 import web.dao.UserDAO;
+import web.model.Role;
 import web.model.User;
+
+import java.util.List;
+import java.util.Set;
 
 @Controller
 @RequestMapping("/admin/users")
 public class AdminController {
-    private final UserDAO userDAO;
 
-    public AdminController(UserDAO userDAO) {
+    private final UserDAO userDAO;
+    private final RoleDAO roleDAO;
+
+//    public AdminController(RoleDAO roleDAO) {
+//        this.roleDAO = roleDAO;
+//    }
+
+    public AdminController(UserDAO userDAO, RoleDAO roleDAO) {
         this.userDAO = userDAO;
+        this.roleDAO = roleDAO;
     }
 
     @GetMapping()
@@ -35,6 +47,7 @@ public class AdminController {
 
     @PostMapping()
     public String create(@ModelAttribute("user") User user) {
+
         userDAO.createUser(user);
         return "redirect:/users";
     }
