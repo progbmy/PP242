@@ -17,15 +17,10 @@ import java.util.Set;
 public class AdminController {
 
     private final UserDAO userDAO;
-    private final RoleDAO roleDAO;
 
-//    public AdminController(RoleDAO roleDAO) {
-//        this.roleDAO = roleDAO;
-//    }
-
-    public AdminController(UserDAO userDAO, RoleDAO roleDAO) {
+    public AdminController(UserDAO userDAO) {
         this.userDAO = userDAO;
-        this.roleDAO = roleDAO;
+
     }
 
     @GetMapping()
