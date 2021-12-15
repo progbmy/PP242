@@ -42,7 +42,7 @@ public class AdminController {
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id) {
         model.addAttribute("users", userDAO.showUser(id));
-        return ("edit");
+        return ("/edit");
     }
 
     @PatchMapping("/{id}")

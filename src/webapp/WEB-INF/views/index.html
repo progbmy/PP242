@@ -12,14 +12,9 @@
     </th:block>
 
     <a href="/admin/users">Admin panel</a> <br>
-    <a href="/user/)">User Panel</a>
+    <a href="/user/">User Panel</a>
 
-    <a th:href="@{/user/{id}(id = ${user.getId()})}">User Panel</a>
-    <br>
-<!--    </div>-->
-<!--    <div th:each = "user : ${users}">-->
-<!--    <a th:href="@{/user/{id}(id= ${user.getId()})}">User panel new</a>-->
-<!--    </div>-->
+<!--    <a th:href="@{/user/{id}(id = ${user.getId()})}">User Panel</a>-->
 
     <form th:method="GET" th:action="@{/logout}">
         <input type="submit" value="Logout">

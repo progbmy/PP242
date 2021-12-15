@@ -1,12 +1,12 @@
 package web.controller;
 
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import web.dao.UserDAO;
+import web.model.User;
 
 @Controller
 @RequestMapping("/user")
@@ -18,15 +18,11 @@ public class UserController {
     }
 
     @GetMapping()
-    public String getAllUser(Model model) {
-        model.addAttribute("users", userDAO.resUsers());
-        return "/user";
-    }
+    public String showUser(Model model) {
+        String name = SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("user", userDAO.findByUsername(name));
 
-    @GetMapping("/{id}")
-    public String show(@PathVariable("id") int id, Model model) {
-        model.addAttribute("user", userDAO.showUser(id));
-        return "user";
+        return "/user";
     }
 
 }
