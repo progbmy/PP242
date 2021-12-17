@@ -13,6 +13,8 @@ User profile
 <p th:text="${user.getLastName()}">VALUE</p>
 <p th:text="${user.getRoles()}">VALUE</p>
 
-
+<form th:method="GET" th:action="@{/logout}">
+    <input type="submit" value="Logout">
+</form>
 </body>
 </html>
