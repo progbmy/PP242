@@ -5,7 +5,7 @@
     <title>New User</title>
 </head>
 <body>
-<form th:method="POST" th:action="@{/users}" th:object="${user}">
+<form th:method="POST" th:action="@{/admin/users}" th:object="${user}">
 
     <label for="userName">Enter userName</label>
     <input type="text" th:field="*{userName}" id="userName">
@@ -29,22 +29,13 @@
     <div style="color: red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">{Password} error</div>
     </br>
 
-    <p>
-        <label>Roles:
-            <input type="checkbox" name="authorities"
-                   th:each="role : ${Roles}"
-                   th:text="${role.name}"
-                   th:value="${role.id}"
-            />
-        </label>
-    </p>
-<!--    <ul>-->
-<!--        <li th:each="role: ${roles}">-->
-<!--            <label for="role" th:text="${role.getRoles()}">Roles</label>-->
-<!--            <input type="checkbox" name="rolesArray" th:value="${role.getRoles()}" id="role"/>-->
-
-<!--        </li>-->
-<!--    </ul>-->
+    <tr>
+        <td><label>User Role: </label></td>
+        <td><select multiple size="2" name="role" >
+            <option value="ROLE_ADMIN">ROLE_ADMIN</option>
+            <option selected="selected" value="ROLE_USER">ROLE_USER</option>
+        </select></td>
+    </tr>
 
     <input type="submit" value="Create!">
 
